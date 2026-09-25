@@ -72,4 +72,5 @@ export const join = {
   text: "Don't miss out on the opportunity to elevate your business to new heights. Sign up now and embark on a journey of success with GlobalHUB",
   cta: { label: "Join today", href: url("/register-business") },
   promo: "3 months FREE - code GH3",
+  code: "GH3",
 };

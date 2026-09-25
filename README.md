@@ -2,6 +2,21 @@
 
 A private redesign demo of the globalhub.co.uk homepage, built as a single route. Most of the page is light (white and paper scenes), with a green join band and an ink footer. The look follows heartaerospace.com: 130px display type over a wide photo panel, a sticky giant wordmark with cards passing over it, editorial long-form lists and a quiet footer. The motion follows ankar.ai: short fades on its tween, springs for movement, a header that changes colour per section and a pill button hover. All copy, data, imagery and links come from the live GlobalHUB site.
 
+## Design infusion: crazyui.com
+
+A later pass folds in crazyui.com's look (measured from its computed styles) on top of the Heart layout and Ankar motion:
+
+- **Warm neutrals**: the page ground is `#F6F4F2` (its body) and tiles and frames are `#EDEBE9` (its cards). These replace the plain white and grey scenes.
+- **Light display serif**: crazyui sets headings in Canela Text Light (300, about -0.03em). Canela is commercial, so Newsreader (OFL, self-hosted) stands in. It is used for every heading, the menu tabs and the service titles. Outfit stays for UI and body copy.
+- **Buttons**: black with a 10px radius, 12px 24px padding, 14px/500. They keep Ankar's hover spring.
+- **Hero**: exactly one screen (100svh, checked at 1440×900 and 375×812).
+  - The headline is centred over crazyui's browser-window frame: `#EDEBE9`, 20px top radius, window dots and an address pill.
+  - The frame's tab row holds the four slide titles, which act as the slide switcher. The active tab fills with a green progress line.
+  - The frame runs straight into the next section, over a grey band, as on crazyui.
+- **Offer bar**: crazyui's black top bar with a copy-code chip, carrying GlobalHUB's own live offer, "3 months FREE - code GH3".
+- **Cards**: 16px radius (10px for thumbnails, 20px for the film frame). The join banner is a rounded green card.
+- **Footer**: a light panel with rounded lower corners (0 0 24px 24px) sits over an ink band, with the giant logo in quiet charcoal rising out of it.
+
 ## Run locally
 
 `npm install`, then `npm run dev` (http://127.0.0.1:3018). `npm run build` and `npm start` for production. `npm run typecheck` checks TypeScript.
@@ -13,7 +28,7 @@ A private redesign demo of the globalhub.co.uk homepage, built as a single route
 
 | # | Section | Source on the live homepage | Scene |
 | --- | --- | --- | --- |
-| 1 | Preloader | Official logo, traced to vectors | white |
+| 1 | Preloader | Official logo, traced to vectors | base |
 | 2 | Hero | The 4 hero slides (title, text, both CTAs, photo) | light |
 | 3 | Pillars | Collaborate, Services, Products cards over the sticky logo | paper |
 | 4 | Film | "What is GlobalHUB?", the YouTube film every slide links to | light |
@@ -22,8 +37,8 @@ A private redesign demo of the globalhub.co.uk homepage, built as a single route
 | 7 | Services | Popular Services (6) and Recently added (6) | paper |
 | 8 | Browse by category | All 83 categories | light |
 | 9 | Why GlobalHUB? | The 6 reasons | paper |
-| 10 | Join | "Grow your business", £20.00 ex tax p/m, Join today, code GH3 | green |
-| 11 | Footer | Email, 5 socials, legal links, company number | ink |
+| 10 | Join | "Grow your business", £20.00 ex tax p/m, Join today, code GH3 | green card |
+| 11 | Footer | Email, 5 socials, legal links, company number | light panel over ink |
 
 The order follows the live page. The film, which the live page only links to, gets its own scene. Popular and Recently added are merged into one spread. The live copy is kept verbatim, including its capitalisation, and nothing is invented.
 
@@ -53,7 +68,7 @@ The order follows the live page. The film, which the live page only links to, ge
   - `Mark` is the arc and G alone, as on the official app icon.
   - `app/icon.png` and `app/favicon.ico` are the official files.
 - **Palette**: four colours, all GlobalHUB's own. Green `#58B056` and charcoal `#444444` come from the logo. Ink `#212121` is the live site's text colour. White is the fourth.
-  - The "paper" panel is a 6% charcoal tint of white, standing in for the live `#f4f4f4`.
+  - The neutrals `#F6F4F2` and `#EDEBE9` come from crazyui.com (see Design infusion).
   - No other hue appears in the interface, including hovers, focus rings and gradients. Photography keeps its own colour.
   - Green is never used for small text on white (2.6:1). It is used as a fill with ink text (6.4:1), or as an accent on ink.
 - **Type**: Outfit is the only family globalhub.co.uk loads, so it is used for everything. It is self-hosted in `app/fonts` (OFL, from @fontsource-variable).
@@ -121,7 +136,7 @@ The five reveal moves:
   - The GSAP timeline reverses faster on close.
   - It traps focus, closes with Esc and returns focus to the trigger.
 - **Hero** (`components/home/Hero.tsx`): the four live slides.
-  - Headline, text and CTAs sit on white. The slide photo fills a wide panel below them (16:7, or 4:3 on phones).
+  - Headline, text and CTAs are centred. The slide photo fills the browser-window frame below them, and the frame's tabs switch slides.
   - The photo crossfades and settles, and headline words rise out of masks.
   - Bottom right: counter, progress bars (click to jump) and a pause control.
   - Rotation is every 7s. It stops off screen and does not start with reduced motion.

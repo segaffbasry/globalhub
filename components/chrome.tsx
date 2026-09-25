@@ -4,9 +4,9 @@ import gsap from "gsap";
 import type { ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { focusOverlay, usePageMotion } from "@/components/motion";
-import { Arrow, Logo, Mark, Pill, Social, reducedMotion } from "@/components/ui";
+import { Arrow, Logo, Pill, Social, reducedMotion } from "@/components/ui";
 import { reveal } from "@/lib/ease";
-import { url } from "@/lib/home-content";
+import { join, url } from "@/lib/home-content";
 import { contact, footerGroups, headerLinks, legalName, menuCategories, menuTabs, socials } from "@/lib/menu";
 
 /* Full-screen menu. An ink sheet drops from the top edge, then the tabs and category links rise into place.
@@ -72,6 +72,19 @@ function Menu({ open, tab, setTab, close }: { open: boolean; tab: number; setTab
   </div>;
 }
 
+/* CrazyUI's black offer bar, carrying GlobalHUB's own live promotion. The code chip copies GH3. */
+function Promo() {
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(join.code); setCopied(true); setTimeout(() => setCopied(false), 1800); } catch { /* clipboard blocked: the code stays readable */ }
+  };
+  return <div className="promo">
+    <a href={join.cta.href}>{join.promo}</a>
+    <button onClick={copy} aria-label={`Copy code ${join.code}`}><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 4h6v6H4zM2 8V2h6" fill="none" stroke="currentColor" strokeWidth="1.2" /></svg>{copied ? "Copied!" : join.code}</button>
+    <span className="sr-only" aria-live="polite">{copied ? "Code copied" : ""}</span>
+  </div>;
+}
+
 /* Frameless header. Its colour follows the section beneath it (data-tone), it hides on the way down and returns on the way up. */
 function Header() {
   const [open, setOpen] = useState(false);
@@ -97,6 +110,8 @@ function Header() {
   const show = (index: number) => { setTab(index); setOpen(true); };
   return <>
     <header className="site-header" ref={bar}>
+      <Promo />
+      <div className="header-row">
       <a href="#top" className="brand" aria-label="GlobalHUB, back to top"><Logo /></a>
       <nav className="nav" aria-label="Main">
         <a href={headerLinks.find.href}>{headerLinks.find.label}</a>
@@ -107,27 +122,31 @@ function Header() {
         <Pill href={headerLinks.join.href} className="header-join">{headerLinks.join.label}</Pill>
         <button className="menu-toggle" aria-label="Open menu" aria-expanded={open} aria-controls="site-menu" onClick={() => show(0)}><span /><span /></button>
       </div>
+      </div>
     </header>
     <Menu open={open} tab={tab} setTab={setTab} close={close} />
   </>;
 }
 
-/* Heart-style footer on ink: small uppercase group labels, then the giant wordmark signs off the page. */
+/* CrazyUI's footer: a light panel with rounded lower corners sits over an ink band, and the giant logo
+   rises out of the band below it. Heart's small uppercase group labels are kept. */
 function Footer() {
-  return <footer className="site-footer" data-tone="ink" data-soft>
-    <div className="wrap footer-grid">
-      <div className="footer-intro">
-        <Mark className="footer-mark" />
-        <a className="footer-mail" href={contact.href} data-appear>{contact.email}</a>
-        <ul className="footer-social" data-appear>{socials.map((s) => <li key={s.name}><a href={s.href} aria-label={`GlobalHUB on ${s.name}`} target="_blank" rel="noopener noreferrer"><Social icon={s.icon} /></a></li>)}</ul>
+  return <footer className="site-footer">
+    <div className="footer-panel" data-tone="light" data-soft>
+      <div className="wrap footer-grid">
+        <div className="footer-intro">
+          <a href="#top" className="footer-brand" aria-label="GlobalHUB, back to top"><Logo /></a>
+          <a className="footer-mail" href={contact.href} data-appear>{contact.email}</a>
+          <ul className="footer-social" data-appear>{socials.map((s) => <li key={s.name}><a href={s.href} aria-label={`GlobalHUB on ${s.name}`} target="_blank" rel="noopener noreferrer"><Social icon={s.icon} /></a></li>)}</ul>
+        </div>
+        {footerGroups.map((group) => <nav className="footer-group" key={group.title} aria-label={group.title} data-appear>
+          <h2>{group.title}</h2>
+          <ul>{group.links.map(([name, href]) => <li key={name}><a href={href}>{name}</a></li>)}</ul>
+        </nav>)}
       </div>
-      {footerGroups.map((group) => <nav className="footer-group" key={group.title} aria-label={group.title} data-appear>
-        <h2>{group.title}</h2>
-        <ul>{group.links.map(([name, href]) => <li key={name}><a href={href}>{name}</a></li>)}</ul>
-      </nav>)}
+      <div className="wrap footer-legal"><p>{legalName}</p><a href="#top">Back to top <Arrow className="up" /></a></div>
     </div>
-    <div className="wrap footer-sign" data-image><Logo title="GlobalHUB" /></div>
-    <div className="wrap footer-legal"><p>{legalName}</p><a href="#top">Back to top <Arrow className="up" /></a></div>
+    <div className="footer-band" data-tone="ink"><div className="wrap footer-sign" data-image><Logo title="GlobalHUB" /></div></div>
   </footer>;
 }
 
