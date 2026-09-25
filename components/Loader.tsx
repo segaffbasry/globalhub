@@ -18,7 +18,7 @@ const ORBIT = `${231 - arc.x} ${231 - arc.y}`;
    build  (0.10–0.95 s) the arc sweeps round the G like an orbit, the G settles, "lobal" rises letter by letter,
                         then "HUB" wipes in from the left
    hold   (0.95–1.25 s)
-   exit   (1.25–1.85 s) the handover fires, the logo lifts away and the ink curtain rises off the hero. */
+   exit   (1.25–1.85 s) the handover fires, the logo lifts away and the white curtain rises off the hero. */
 export default function Loader() {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {

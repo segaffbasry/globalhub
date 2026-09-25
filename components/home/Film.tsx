@@ -22,7 +22,7 @@ export default function Film() {
     return () => observer.disconnect();
   }, [playing]);
 
-  return <section className="film" id="film" data-tone="ink" aria-labelledby="film-title">
+  return <section className="film" id="film" data-tone="light" aria-labelledby="film-title">
     <div className="wrap film-grid">
       <div className="film-copy">
         <Label>Watch the video</Label>

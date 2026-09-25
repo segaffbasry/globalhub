@@ -16,7 +16,7 @@ export default function Categories() {
     const el = preview.current; if (!el || event.pointerType !== "mouse") return;
     el.style.transform = `translate3d(${event.clientX + 24}px, ${event.clientY - 90}px, 0)`;
   };
-  return <section className="categories" data-tone="charcoal" data-soft aria-labelledby="categories-title" onPointerMove={follow} onPointerLeave={() => show(null)}>
+  return <section className="categories" data-tone="light" data-soft aria-labelledby="categories-title" onPointerMove={follow} onPointerLeave={() => show(null)}>
     <div className="wrap">
       <h2 id="categories-title" className="section-title" data-rise>{categoriesTitle}</h2>
       <ul className="cat-list">{data.categories.map((c) => <li key={c.slug}>

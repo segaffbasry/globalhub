@@ -17,7 +17,7 @@ function List({ title, items, id }: { title: string; items: Service[]; id: strin
 
 /* Popular Services and Recently added, merged into one editorial spread of two linked lists (Heart's logo-cloud rhythm). */
 export default function Services() {
-  return <section className="services" data-tone="light" aria-labelledby="services-title">
+  return <section className="services" data-tone="paper" aria-labelledby="services-title">
     <div className="wrap">
       <div className="services-head">
         <h2 id="services-title" className="section-title" data-rise>{services.title}</h2>

@@ -13,7 +13,7 @@ export default function Feed() {
     const card = el.querySelector("li"); const step = card ? card.getBoundingClientRect().width + 24 : el.clientWidth * .8;
     el.scrollBy({ left: dir * step, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   };
-  return <section className="feed" data-tone="light" aria-labelledby="feed-title">
+  return <section className="feed" data-tone="paper" aria-labelledby="feed-title">
     <div className="wrap feed-head">
       <h2 id="feed-title" data-rise>{feed.title}</h2>
       <div className="feed-join" data-appear>

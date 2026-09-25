@@ -11,8 +11,9 @@ import { splitMask } from "@/lib/split";
 const SLIDE_MS = 7000;
 const pad = (n: number) => String(n).padStart(2, "0");
 
-/* The four live hero slides as one full-bleed ink stage (Heart's hero). The photograph crossfades and settles,
-   the headline words rise out of their masks, and the counter, progress line and pause control sit bottom right.
+/* The four live hero slides on white: Heart's display headline, then the slide photograph in a wide framed panel.
+   The photograph crossfades and settles, the headline words rise out of their masks, and the counter, progress
+   line and pause control sit under the panel.
    Its entrance waits for the preloader's intro:done event. */
 export default function Hero() {
   const stage = useRef<HTMLElement>(null);
@@ -89,16 +90,8 @@ export default function Hero() {
 
   const running = ready && !paused && visible;
 
-  return <section className="hero" ref={stage} data-tone="ink" aria-roledescription="carousel" aria-label="GlobalHUB at a glance">
+  return <section className="hero" ref={stage} data-tone="light" aria-roledescription="carousel" aria-label="GlobalHUB at a glance">
     <h1 className="sr-only">GlobalHUB</h1>
-    <div className="hero-photos" aria-hidden="true">
-      {slides.map((slide, i) => <div key={slide.title} className={`hero-photo photo ${i === index ? "is-active" : ""}`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={slide.image.src} alt="" width={slide.image.width} height={slide.image.height} loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : undefined} decoding="async" />
-      </div>)}
-      <div className="hero-shade" />
-      <div className="hero-veil" />
-    </div>
     <div className="hero-inner wrap">
       <div className="hero-slides" aria-live={paused ? "polite" : "off"}>
         {slides.map((slide, i) => <div key={slide.title} className={`hero-slide ${i === index ? "is-active" : ""}`} role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${slides.length}`} aria-hidden={i !== index} inert={i !== index}>
@@ -111,6 +104,13 @@ export default function Hero() {
             </div>
           </div>
         </div>)}
+      </div>
+      <div className="hero-photos" aria-hidden="true">
+        {slides.map((slide, i) => <div key={slide.title} className={`hero-photo photo ${i === index ? "is-active" : ""}`}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={slide.image.src} alt="" width={slide.image.width} height={slide.image.height} loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : undefined} decoding="async" />
+        </div>)}
+        <div className="hero-veil" />
       </div>
       <div className="hero-controls">
         <p className="hero-count" aria-hidden="true"><span>{pad(index + 1)}</span> / {pad(slides.length)}</p>

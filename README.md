@@ -1,6 +1,6 @@
 # GlobalHUB homepage
 
-A private redesign demo of the globalhub.co.uk homepage, built as a single route. The look follows heartaerospace.com: a full-bleed ink hero with 130px display type, a sticky giant wordmark with cards passing over it, editorial long-form lists and a quiet footer. The motion follows ankar.ai: short fades on its tween, springs for movement, a header that changes colour per section and a pill button hover. All copy, data, imagery and links come from the live GlobalHUB site.
+A private redesign demo of the globalhub.co.uk homepage, built as a single route. Most of the page is light (white and paper scenes), with a green join band and an ink footer. The look follows heartaerospace.com: 130px display type over a wide photo panel, a sticky giant wordmark with cards passing over it, editorial long-form lists and a quiet footer. The motion follows ankar.ai: short fades on its tween, springs for movement, a header that changes colour per section and a pill button hover. All copy, data, imagery and links come from the live GlobalHUB site.
 
 ## Run locally
 
@@ -13,15 +13,15 @@ A private redesign demo of the globalhub.co.uk homepage, built as a single route
 
 | # | Section | Source on the live homepage | Scene |
 | --- | --- | --- | --- |
-| 1 | Preloader | Official logo, traced to vectors | ink |
-| 2 | Hero | The 4 hero slides (title, text, both CTAs, photo) | ink |
+| 1 | Preloader | Official logo, traced to vectors | white |
+| 2 | Hero | The 4 hero slides (title, text, both CTAs, photo) | light |
 | 3 | Pillars | Collaborate, Services, Products cards over the sticky logo | paper |
-| 4 | Film | "What is GlobalHUB?", the YouTube film every slide links to | ink |
-| 5 | Social Feed | The 5 latest posts, plus the log-in prompt | light |
-| 6 | Featured businesses | The 8 featured companies with cover photos | ink |
-| 7 | Services | Popular Services (6) and Recently added (6) | light |
-| 8 | Browse by category | All 83 categories | charcoal |
-| 9 | Why GlobalHUB? | The 6 reasons | light |
+| 4 | Film | "What is GlobalHUB?", the YouTube film every slide links to | light |
+| 5 | Social Feed | The 5 latest posts, plus the log-in prompt | paper |
+| 6 | Featured businesses | The 8 featured companies with cover photos | light |
+| 7 | Services | Popular Services (6) and Recently added (6) | paper |
+| 8 | Browse by category | All 83 categories | light |
+| 9 | Why GlobalHUB? | The 6 reasons | paper |
 | 10 | Join | "Grow your business", £20.00 ex tax p/m, Join today, code GH3 | green |
 | 11 | Footer | Email, 5 socials, legal links, company number | ink |
 
@@ -54,7 +54,7 @@ The order follows the live page. The film, which the live page only links to, ge
   - `app/icon.png` and `app/favicon.ico` are the official files.
 - **Palette**: four colours, all GlobalHUB's own. Green `#58B056` and charcoal `#444444` come from the logo. Ink `#212121` is the live site's text colour. White is the fourth.
   - The "paper" panel is a 6% charcoal tint of white, standing in for the live `#f4f4f4`.
-  - No other hue appears anywhere, including hovers, focus rings and gradients.
+  - No other hue appears in the interface, including hovers, focus rings and gradients. Photography keeps its own colour.
   - Green is never used for small text on white (2.6:1). It is used as a fill with ink text (6.4:1), or as an accent on ink.
 - **Type**: Outfit is the only family globalhub.co.uk loads, so it is used for everything. It is self-hosted in `app/fonts` (OFL, from @fontsource-variable).
   - Display settings follow Heart's measured type: 700 weight, -0.02em tracking, 1.0 line height.
@@ -64,7 +64,7 @@ The order follows the live page. The film, which the live page only links to, ge
 
 ### Preloader (`components/Loader.tsx`)
 
-The loader is the company signing its name. It is built from the traced logo on one GSAP timeline, 1.85s long, over the hero's opening ink.
+The loader is the company signing its name. It is built from the traced logo, in its real green and charcoal, on one GSAP timeline, 1.85s long, over the hero's opening white.
 
 | Time | Stage |
 | --- | --- |
@@ -72,7 +72,7 @@ The loader is the company signing its name. It is built from the traced logo on 
 | 0.32–0.87s | "lobal" rises letter by letter, 0.05s apart. |
 | 0.55–1.11s | "HUB" wipes in from the left, one letter at a time. |
 | 1.11–1.25s | Hold. |
-| 1.25–1.85s | Exit: the handover fires, the logo lifts away and the ink curtain rises off the hero. |
+| 1.25–1.85s | Exit: the handover fires, the logo lifts away and the white curtain rises off the hero. |
 
 - **Why this build**: the logo is an orbit ring around a letterform, followed by a two-colour word. So the ring orbits in, the green word builds as letters, and the heavy "HUB" is revealed as a block.
 - **Handover**: at the start of the exit it removes `is-loading` from `<html>`, sets `data-intro="done"` and dispatches `intro:done`. The hero entrance and the header fade listen for that event, so the curtain and the entrance overlap. Lenis is stopped until then.
@@ -121,6 +121,7 @@ The five reveal moves:
   - The GSAP timeline reverses faster on close.
   - It traps focus, closes with Esc and returns focus to the trigger.
 - **Hero** (`components/home/Hero.tsx`): the four live slides.
+  - Headline, text and CTAs sit on white. The slide photo fills a wide panel below them (16:7, or 4:3 on phones).
   - The photo crossfades and settles, and headline words rise out of masks.
   - Bottom right: counter, progress bars (click to jump) and a pause control.
   - Rotation is every 7s. It stops off screen and does not start with reduced motion.
@@ -128,7 +129,7 @@ The five reveal moves:
   - A local poster with Heart's "Play video" pill stands in until someone presses play. Then the privacy-enhanced YouTube player loads.
   - It pauses when scrolled out of view.
   - `<noscript>` links to YouTube.
-- **Photography**: always greyscale. Linked photos take a green multiply on hover, so images stay inside the palette. The live hero photos have a green gradient baked into their bottom edge, which the ink shade covers.
+- **Photography**: shown in full colour, as published. Linked photos zoom in 5% on hover, on the reveal spring. The live hero photos keep the green gradient baked into their bottom edge, which matches the brand green.
 
 ### Copied interaction: Ankar's "Book a demo" pill
 

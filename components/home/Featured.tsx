@@ -2,7 +2,7 @@ import { companyUrl, data, featuredTitle } from "@/lib/home-content";
 
 /* Featured businesses: the eight live cover photographs in an editorial grid, each opening the company page. */
 export default function Featured() {
-  return <section className="featured" data-tone="ink" aria-labelledby="featured-title">
+  return <section className="featured" data-tone="light" aria-labelledby="featured-title">
     <div className="wrap">
       <h2 id="featured-title" className="section-title" data-rise>{featuredTitle}</h2>
       <ul className="featured-grid">
