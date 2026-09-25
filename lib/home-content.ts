@@ -27,11 +27,12 @@ export const categoryUrl = (slug: string) => url(`/category/${slug}`);
 /** The "What is GlobalHUB?" film every hero slide links to (cta_primary_link in the slides API). */
 export const film = { youtubeId: "xdgnDmeqkMk", title: "What is GlobalHUB?", href: "https://youtu.be/xdgnDmeqkMk" };
 
-/** The three cards under the live hero. The live cards are not links; each here points at the matching live index. */
+/** The three cards under the live hero. The live cards are not links; each here points at the matching live index.
+    Photos are GlobalHUB's own category images (api.globalhub.co.uk/storage/categories/…): Office, Consulting, Wholesale Trade. */
 export const pillars = [
-  { title: "Collaborate", text: "Partner with other businesses to share capacity, spread the cost of minimum order quantities (MOQs), collaborate on projects and much more.", href: url("/collaborations"), cta: "Collaboration" },
-  { title: "Services", text: "Find your next partnership and browse services provided by GlobalHUB members", href: url("/services"), cta: "Worldwide Services" },
-  { title: "Products", text: "Looking for a specific part or product? Find it on GlobalHUB", href: url("/products"), cta: "Products & Parts" },
+  { title: "Collaborate", text: "Partner with other businesses to share capacity, spread the cost of minimum order quantities (MOQs), collaborate on projects and much more.", href: url("/collaborations"), cta: "Collaboration", image: { src: "/images/pillars/collaborate.webp", width: 1200, height: 693 } },
+  { title: "Services", text: "Find your next partnership and browse services provided by GlobalHUB members", href: url("/services"), cta: "Worldwide Services", image: { src: "/images/pillars/services.webp", width: 1400, height: 933 } },
+  { title: "Products", text: "Looking for a specific part or product? Find it on GlobalHUB", href: url("/products"), cta: "Products & Parts", image: { src: "/images/pillars/products.webp", width: 1400, height: 933 } },
 ];
 
 export const feed = {

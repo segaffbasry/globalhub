@@ -7,13 +7,14 @@ A private redesign demo of the globalhub.co.uk homepage, built as a single route
 A later pass folds in crazyui.com's look (measured from its computed styles) on top of the Heart layout and Ankar motion:
 
 - **Warm neutrals**: the page ground is `#F6F4F2` (its body) and tiles and frames are `#EDEBE9` (its cards). These replace the plain white and grey scenes.
-- **Light display serif**: crazyui sets headings in Canela Text Light (300, about -0.03em). Canela is commercial, so Newsreader (OFL, self-hosted) stands in. It is used for every heading, the menu tabs and the service titles. Outfit stays for UI and body copy.
+- **Light, tight display**: crazyui sets headings in a light serif (Canela, about -0.03em). This site keeps GlobalHUB's own typeface: headings are Outfit 400 at -0.035em, which gives the same lightness without a foreign font.
 - **Buttons**: black with a 10px radius, 12px 24px padding, 14px/500. They keep Ankar's hover spring.
-- **Hero**: exactly one screen (100svh, checked at 1440×900 and 375×812).
-  - The headline is centred over crazyui's browser-window frame: `#EDEBE9`, 20px top radius, window dots and an address pill.
+- **Hero**: exactly one screen on desktop (100svh, checked at 1440×900), split left and right.
+  - Headline, text and CTAs on the left. On the right, crazyui's browser-window frame: `#EDEBE9`, 20px radius, window dots and an address pill.
   - The frame's tab row holds the four slide titles, which act as the slide switcher. The active tab fills with a green progress line.
-  - The frame runs straight into the next section, over a grey band, as on crazyui.
+  - Below 960px the two stack.
 - **Offer bar**: crazyui's black top bar with a copy-code chip, carrying GlobalHUB's own live offer, "3 months FREE - code GH3".
+- **Pillar tiles**: crazyui's component tiles. Each has a 20px frame, the photo inset at 10px with a number chip, the live copy and a small black arrow button. The photos are GlobalHUB's own category images (Office, Consulting, Wholesale Trade) in `public/images/pillars/`. There is no stock footage: the page uses only the prospect's own material.
 - **Cards**: 16px radius (10px for thumbnails, 20px for the film frame). The join banner is a rounded green card.
 - **Footer**: a light panel with rounded lower corners (0 0 24px 24px) sits over an ink band, with the giant logo in quiet charcoal rising out of it.
 
@@ -30,7 +31,7 @@ A later pass folds in crazyui.com's look (measured from its computed styles) on 
 | --- | --- | --- | --- |
 | 1 | Preloader | Official logo, traced to vectors | base |
 | 2 | Hero | The 4 hero slides (title, text, both CTAs, photo) | light |
-| 3 | Pillars | Collaborate, Services, Products cards over the sticky logo | paper |
+| 3 | Pillars | Collaborate, Services, Products as photo tiles | paper |
 | 4 | Film | "What is GlobalHUB?", the YouTube film every slide links to | light |
 | 5 | Social Feed | The 5 latest posts, plus the log-in prompt | paper |
 | 6 | Featured businesses | The 8 featured companies with cover photos | light |

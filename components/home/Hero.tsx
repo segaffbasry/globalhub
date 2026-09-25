@@ -11,9 +11,9 @@ import { splitMask } from "@/lib/split";
 const SLIDE_MS = 7000;
 const pad = (n: number) => String(n).padStart(2, "0");
 
-/* The four live hero slides as one full-height scene (100svh). The headline, text and CTAs are centred in
-   CrazyUI's light serif; below them the slide photograph sits in a browser-window frame whose tabs are the
-   slide titles (click to jump, the active tab fills as a progress line) and which runs on into the next section.
+/* The four live hero slides as one full-height scene (100svh), split in two: headline, text and CTAs on the left,
+   and on the right the slide photograph in CrazyUI's browser-window frame, whose tabs are the slide titles
+   (click to jump, the active tab fills as a progress line). Phones stack the two.
    Its entrance waits for the preloader's intro:done event. */
 export default function Hero() {
   const stage = useRef<HTMLElement>(null);
@@ -94,7 +94,8 @@ export default function Hero() {
 
   return <section className="hero" ref={stage} data-tone="light" aria-roledescription="carousel" aria-label="GlobalHUB at a glance">
     <h1 className="sr-only">GlobalHUB</h1>
-    <div className="hero-inner wrap">
+    <div className="hero-grid wrap">
+    <div className="hero-inner">
       <div className="hero-slides" aria-live={paused ? "polite" : "off"}>
         {slides.map((slide, i) => <div key={slide.title} className={`hero-slide ${i === index ? "is-active" : ""}`} role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${slides.length}`} aria-hidden={i !== index} inert={i !== index}>
           <h2 className="hero-title">{slide.title}</h2>
@@ -107,7 +108,7 @@ export default function Hero() {
       </div>
     </div>
     {/* CrazyUI's browser-window frame: window dots, the address pill and a row of tabs, one per slide. */}
-    <div className="hero-window wrap">
+    <div className="hero-window">
       <div className="hero-chrome hero-controls">
         <span className="hero-dots" aria-hidden="true"><i /><i /><i /></span>
         <span className="hero-url" aria-hidden="true"><svg width="10" height="12" viewBox="0 0 10 12"><path d="M2 5V3.5a3 3 0 0 1 6 0V5M1 5h8v6H1z" fill="none" stroke="currentColor" strokeWidth="1.2" /></svg>globalhub.co.uk</span>
@@ -126,6 +127,7 @@ export default function Hero() {
         </div>)}
         <div className="hero-veil" />
       </div>
+    </div>
     </div>
   </section>;
 }

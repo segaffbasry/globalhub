@@ -5,9 +5,6 @@ import "./globals.css";
 
 // Outfit is the typeface globalhub.co.uk loads (next/font "__Outfit"); self-hosted here from @fontsource-variable (OFL).
 const outfit = localFont({ src: "./fonts/Outfit-Variable.woff2", weight: "100 900", variable: "--font-outfit", display: "swap" });
-// Display serif after crazyui.com, which sets headings in Canela Text Light (300). Canela is commercial, so
-// Newsreader (OFL, from @fontsource-variable) stands in: same light, high-contrast text-serif character.
-const serif = localFont({ src: "./fonts/Newsreader-Variable.woff2", weight: "200 800", variable: "--font-serif", display: "swap" });
 
 export const metadata: Metadata = {
   title: "GlobalHUB",
@@ -22,7 +19,7 @@ export const viewport: Viewport = { themeColor: "#f6f4f2" };
 const intro = `(function(){var d=document.documentElement;if(matchMedia("(prefers-reduced-motion: reduce)").matches){d.dataset.intro="done";return}d.classList.add("is-loading");setTimeout(function(){if(d.dataset.intro!=="done"){d.classList.remove("is-loading");d.dataset.intro="done";document.dispatchEvent(new Event("intro:done"))}},4500)})();`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-GB" className={`${outfit.variable} ${serif.variable}`} data-htone="light" suppressHydrationWarning>
+  return <html lang="en-GB" className={outfit.variable} data-htone="light" suppressHydrationWarning>
     <head>
       <script dangerouslySetInnerHTML={{ __html: intro }} />
       <script dangerouslySetInnerHTML={{ __html: posthogSnippet }} />
