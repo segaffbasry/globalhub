@@ -1,6 +1,6 @@
 # GlobalHUB homepage
 
-A private redesign demo of the globalhub.co.uk homepage, built as a single route. Most of the page is light (white and paper scenes), with a green join band and an ink footer. The look follows heartaerospace.com: 130px display type over a wide photo panel, a sticky giant wordmark with cards passing over it, editorial long-form lists and a quiet footer. The motion follows ankar.ai: short fades on its tween, springs for movement, a header that changes colour per section and a pill button hover. All copy, data, imagery and links come from the live GlobalHUB site.
+A private redesign demo of the globalhub.co.uk homepage, built as a single route. Most of the page is light (warm white and grey scenes), with a green join card and an ink footer band. The layout started from heartaerospace.com (editorial long-form lists, small uppercase labels) and was later infused with crazyui.com (see Design infusion). The motion follows ankar.ai: short fades on its tween, springs for movement, a header that changes colour per section and a pill button hover. All copy, data, imagery and links come from the live GlobalHUB site.
 
 ## Design infusion: crazyui.com
 
