@@ -32,16 +32,33 @@ A later pass folds in crazyui.com's look (measured from its computed styles) on 
 | 1 | Preloader | Official logo, traced to vectors | base |
 | 2 | Hero | The 4 hero slides (title, text, both CTAs, photo) | light |
 | 3 | Pillars | Collaborate, Services, Products as photo tiles | paper |
-| 4 | Film | "What is GlobalHUB?", the YouTube film every slide links to | light |
-| 5 | Social Feed | The 5 latest posts, plus the log-in prompt | paper |
-| 6 | Featured businesses | The 8 featured companies with cover photos | light |
-| 7 | Services | Popular Services (6) and Recently added (6) | paper |
+| 4 | Why GlobalHUB? | The 6 reasons | light |
+| 5 | Services | Popular Services (6) and Recently added (6), two rows drifting with the scroll | paper |
+| 6 | Film | "What is GlobalHUB?", the YouTube film every slide links to | light |
+| 7 | Featured businesses | A moving wall of 31 member logos: the 8 featured companies, then every service provider | paper |
 | 8 | Browse by category | All 83 categories | light |
-| 9 | Why GlobalHUB? | The 6 reasons | paper |
+| 9 | Social Feed | The 5 latest posts, plus the log-in prompt | paper |
 | 10 | Join | "Grow your business", £20.00 ex tax p/m, Join today, code GH3 | green card |
 | 11 | Footer | Email, 5 socials, legal links, company number | light panel over ink |
 
 The order follows the live page. The film, which the live page only links to, gets its own scene. Popular and Recently added are merged into one spread. The live copy is kept verbatim, including its capitalisation, and nothing is invented.
+
+### Client feedback, 28 Sep
+
+- **Featured businesses**: the cover photos were weak, so the section is now scrolling member logos pulled from the live site. The snapshot's `members` list has 31 companies with a logo, excluding GlobalHUB's own admin account.
+  - Two rows move in opposite directions (60s and 70s loops).
+  - They pause on hover, on keyboard focus or with the "Pause logos" button.
+  - Reduced motion shows a still, wrapping grid.
+- **Social feed**: moved to the bottom, just above the join card.
+- **More movement around Services**: the two service lists are rows of photo cards that drift in opposite directions, scrubbed to the scroll (GSAP ScrollTrigger), so every card passes through view.
+  - Nothing moves unless the page is scrolled.
+  - On phones and with reduced motion, the rows are plain swipeable lists.
+- **Why GlobalHUB?**: moved up, straight after the pillars.
+- **Testimonials**: none exist on the live site.
+  - There is no testimonials page, and `/about` is empty.
+  - The API has no testimonials or reviews endpoint (`/api/testimonials` and `/api/reviews` return 404).
+  - The only review in the data is a single 5-star review of a member company (Fractional Finance Director), not of GlobalHUB.
+  - Nothing was invented. A testimonials section can be added once GlobalHUB supplies real quotes.
 
 ## Content
 

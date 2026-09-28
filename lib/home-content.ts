@@ -15,6 +15,7 @@ export const data = snapshot as unknown as {
   hero: { title: string; description: string; image: Img; primary: { label: string; href: string }; secondary: { label: string; href: string } }[];
   posts: { id: number; company: Company; author: string; date: string; text: string; image: Img | null; comments: number; shares: number }[];
   featured: (Company & { based: string | null; country: string | null; industries: string[]; cover: Img | null })[];
+  members: { name: string; slug: string; logo: Img }[];
   popular: Service[];
   recent: Service[];
   categories: { name: string; slug: string; image: Img | null }[];

@@ -10,19 +10,20 @@ import Pillars from "@/components/home/Pillars";
 import Services from "@/components/home/Services";
 import Why from "@/components/home/Why";
 
-// Section order follows the live homepage, with the film (linked from every live hero slide) given its own scene.
+// Order after client feedback (28 Sep): Why GlobalHUB? moves up under the pillars, the social feed moves to the
+// bottom above the join card, and the film (linked from every live hero slide) keeps its own scene.
 export default function Home() {
   return <>
     <Loader />
     <Shell>
       <Hero />
       <Pillars />
-      <Film />
-      <Feed />
-      <Featured />
-      <Services />
-      <Categories />
       <Why />
+      <Services />
+      <Film />
+      <Featured />
+      <Categories />
+      <Feed />
       <Join />
     </Shell>
   </>;

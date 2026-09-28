@@ -124,18 +124,28 @@ def main():
         "image": image(c.get("thumbnail") or c.get("image"), "categories", 480),
     } for c in categories if c.get("active", 1)]
 
+    # Every member company the homepage data exposes (featured first, then service providers), for the logo strip.
+    # GlobalHUB's own admin company is left out.
+    seen, members = set(), []
+    for c in list(featured) + [x["company"] for x in services]:
+        if c["slug"] in seen or c["slug"] == "globalhub" or not c.get("logo"):
+            continue
+        seen.add(c["slug"])
+        members.append({"name": c["name"], "slug": c["slug"], "logo": image(c["logo"], "logos", 320)})
+
     data = {
         "fetched": datetime.utcnow().strftime("%Y-%m-%d"),
         "hero": hero,
         "posts": posts,
         "featured": [company(c, cover=True) for c in featured],
+        "members": members,
         "popular": popular,
         "recent": recent,
         "categories": cats,
     }
     os.makedirs(os.path.join(ROOT, "content"), exist_ok=True)
     json.dump(data, open(os.path.join(ROOT, "content", "home.json"), "w"), indent=1, ensure_ascii=False)
-    print(f"slides {len(hero)}, posts {len(posts)}, featured {len(data['featured'])}, popular {len(popular)}, recent {len(recent)}, categories {len(cats)}")
+    print(f"slides {len(hero)}, posts {len(posts)}, featured {len(data['featured'])}, members {len(members)}, popular {len(popular)}, recent {len(recent)}, categories {len(cats)}")
 
 
 if __name__ == "__main__":
