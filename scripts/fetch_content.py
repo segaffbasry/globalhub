@@ -79,7 +79,6 @@ def company(c, cover=False):
 
 def main():
     slides = get("home-page-slides")
-    feed = get("social-feed?per_page=5&page=1")["posts"]
     featured = get("featured-companies")
     services = get("services")
     categories = get("categories")
@@ -92,17 +91,6 @@ def main():
         "primary": {"label": s["cta_primary_title"], "href": s["cta_primary_link"]},
         "secondary": {"label": s["cta_secondary_title"], "href": s["cta_secondary_link"]},
     } for i, s in enumerate(slides)]
-
-    posts = [{
-        "id": p["id"],
-        "company": company(p["company"]),
-        "author": " ".join(x for x in [p["user"].get("first_name"), p["user"].get("last_name")] if x),
-        "date": date(p["created_at"]),
-        "text": (p["post"] or "").replace("\r\n", "\n").strip(),
-        "image": image(p["post_images"][0]["path"], "posts", 1200) if p["post_images"] else None,
-        "comments": p["comments_count"],
-        "shares": p.get("share_count") or 0,
-    } for p in feed]
 
     def service(s):
         img = s["images"][0] if s["images"] else None
@@ -136,7 +124,6 @@ def main():
     data = {
         "fetched": datetime.utcnow().strftime("%Y-%m-%d"),
         "hero": hero,
-        "posts": posts,
         "featured": [company(c, cover=True) for c in featured],
         "members": members,
         "popular": popular,
@@ -145,7 +132,7 @@ def main():
     }
     os.makedirs(os.path.join(ROOT, "content"), exist_ok=True)
     json.dump(data, open(os.path.join(ROOT, "content", "home.json"), "w"), indent=1, ensure_ascii=False)
-    print(f"slides {len(hero)}, posts {len(posts)}, featured {len(data['featured'])}, members {len(members)}, popular {len(popular)}, recent {len(recent)}, categories {len(cats)}")
+    print(f"slides {len(hero)}, featured {len(data['featured'])}, members {len(members)}, popular {len(popular)}, recent {len(recent)}, categories {len(cats)}")
 
 
 if __name__ == "__main__":

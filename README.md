@@ -35,21 +35,19 @@ A later pass folds in crazyui.com's look (measured from its computed styles) on 
 | 4 | Why GlobalHUB? | The 6 reasons | light |
 | 5 | Services | Popular Services (6) and Recently added (6), two rows drifting with the scroll | paper |
 | 6 | Film | "What is GlobalHUB?", the YouTube film every slide links to | light |
-| 7 | Featured businesses | A moving wall of 31 member logos: the 8 featured companies, then every service provider | paper |
+| 7 | Featured businesses | One scrolling line of 31 member logos: the 8 featured companies, then every service provider | paper |
 | 8 | Browse by category | All 83 categories | light |
-| 9 | Social Feed | The 5 latest posts, plus the log-in prompt | paper |
-| 10 | Join | "Grow your business", £20.00 ex tax p/m, Join today, code GH3 | green card |
-| 11 | Footer | Email, 5 socials, legal links, company number | light panel over ink |
+| 9 | Join | "Grow your business", £20.00 ex tax p/m, Join today, code GH3 | green card |
+| 10 | Footer | Email, 5 socials, legal links, company number | light panel over ink |
 
 The order follows the live page. The film, which the live page only links to, gets its own scene. Popular and Recently added are merged into one spread. The live copy is kept verbatim, including its capitalisation, and nothing is invented.
 
 ### Client feedback, 28 Sep
 
 - **Featured businesses**: the cover photos were weak, so the section is now scrolling member logos pulled from the live site. The snapshot's `members` list has 31 companies with a logo, excluding GlobalHUB's own admin account.
-  - Two rows move in opposite directions (60s and 70s loops).
+  - One line on an 80s loop. The logos sit straight on the section with no boxes, and `mix-blend-mode: multiply` drops their baked-in white backgrounds.
   - They pause on hover, on keyboard focus or with the "Pause logos" button.
-  - Reduced motion shows a still, wrapping grid.
-- **Social feed**: moved to the bottom, just above the join card.
+  - Reduced motion shows a still, wrapping group.
 - **More movement around Services**: the two service lists are rows of photo cards that drift in opposite directions, scrubbed to the scroll (GSAP ScrollTrigger), so every card passes through view.
   - Nothing moves unless the page is scrolled.
   - On phones and with reduced motion, the rows are plain swipeable lists.
@@ -60,13 +58,22 @@ The order follows the live page. The film, which the live page only links to, ge
   - The only review in the data is a single 5-star review of a member company (Fractional Finance Director), not of GlobalHUB.
   - Nothing was invented. A testimonials section can be added once GlobalHUB supplies real quotes.
 
+### Client feedback, 29 Sep
+
+- **Social feed**: removed. The API snapshot no longer fetches posts.
+- **Logos**: out of the white boxes, on one scrolling line (see above).
+- **Film**: under "What is GlobalHUB?" there is now a short line and a play button. The line is the first sentence of GlobalHUB's own company profile (`/company/globalhub`).
+- **Links don't leave the page**: a capture-phase click guard in `components/motion.tsx` stops every link that isn't an in-page `#` anchor, including middle-clicks.
+  - The links keep their real live-site URLs, so `scripts/check_links.py` still verifies them.
+  - The hero's "Watch the video" and "What is GlobalHUB?" buttons scroll to the film on this page instead of opening YouTube.
+
 ## Content
 
 - **Copy** is in `lib/home-content.ts`. **Header, menu and footer** data is in `lib/menu.ts`.
 - **Live data**: the live homepage renders client-side from a public JSON API (`api.globalhub.co.uk/api/home-page-slides`, `social-feed`, `featured-companies`, `services`, `categories`). `scripts/fetch_content.py` calls the same endpoints and writes `content/home.json`.
   - It keeps only what the homepage displays. No emails, phone numbers or account data are stored.
   - "Popular" means the highest `popularity_count` and "Recently added" means the newest `created_at`, which reproduces the live lists exactly.
-- **Links**: every card and menu link points at the matching live URL: `/company/{slug}`, `/service/{id}`, `/category/{slug}` and `/{services|collaborations|products}/category/{slug}`.
+- **Links**: every card and menu link points at the matching live URL, but clicking does nothing in this private demo (see the 29 Sep notes): `/company/{slug}`, `/service/{id}`, `/category/{slug}` and `/{services|collaborations|products}/category/{slug}`.
   - `scripts/check_links.py` checked all 373 outbound links, including every menu tab. All return 200. The live site returns a real 404 for unknown paths, so a 200 means the page exists.
   - The only in-page anchors are `#top` and `#main`. There are no `#` placeholders.
 - **Images** are in `public/images/` as WebP, downloaded from `api.globalhub.co.uk/storage` (nothing is hotlinked):

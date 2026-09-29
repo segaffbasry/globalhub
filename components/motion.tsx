@@ -112,6 +112,15 @@ export function usePageMotion() {
     const ctx = gsap.context(() => { undoSplits = reveals(reduced); });
     const undoTone = headerTone();
 
+    // Private demo: nothing leaves the page. Links keep their real live-site URLs (so the structure is honest and
+    // checkable) but clicking them does nothing; only in-page anchors work.
+    const stayOnPage = (event: MouseEvent) => {
+      const link = (event.target as Element).closest<HTMLAnchorElement>("a[href]");
+      if (link && !link.getAttribute("href")!.startsWith("#")) event.preventDefault();
+    };
+    document.addEventListener("click", stayOnPage, true);
+    document.addEventListener("auxclick", stayOnPage, true);
+
     const onClick = (event: MouseEvent) => {
       const link = (event.target as Element).closest<HTMLAnchorElement>('a[href^="#"]');
       if (!link || event.defaultPrevented) return;
@@ -130,6 +139,8 @@ export function usePageMotion() {
 
     return () => {
       document.removeEventListener("click", onClick);
+      document.removeEventListener("click", stayOnPage, true);
+      document.removeEventListener("auxclick", stayOnPage, true);
       document.removeEventListener("intro:done", start);
       window.removeEventListener("load", refresh);
       ctx.revert(); undoSplits(); undoTone();

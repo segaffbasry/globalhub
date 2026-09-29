@@ -1,5 +1,5 @@
 // Homepage copy. Everything here is verbatim from globalhub.co.uk (homepage, captured 25 Sep 2026).
-// Data the live homepage loads from its API (slides, social feed, featured businesses, services, categories)
+// Data the live homepage loads from its API (slides, featured businesses, services, categories)
 // is snapshotted into content/home.json by scripts/fetch_content.py, with images saved to public/images/.
 import snapshot from "@/content/home.json";
 
@@ -13,7 +13,6 @@ export type Service = { id: number; title: string; description: string; image: I
 export const data = snapshot as unknown as {
   fetched: string;
   hero: { title: string; description: string; image: Img; primary: { label: string; href: string }; secondary: { label: string; href: string } }[];
-  posts: { id: number; company: Company; author: string; date: string; text: string; image: Img | null; comments: number; shares: number }[];
   featured: (Company & { based: string | null; country: string | null; industries: string[]; cover: Img | null })[];
   members: { name: string; slug: string; logo: Img }[];
   popular: Service[];
@@ -26,7 +25,12 @@ export const serviceUrl = (id: number) => url(`/service/${id}`);
 export const categoryUrl = (slug: string) => url(`/category/${slug}`);
 
 /** The "What is GlobalHUB?" film every hero slide links to (cta_primary_link in the slides API). */
-export const film = { youtubeId: "xdgnDmeqkMk", title: "What is GlobalHUB?", href: "https://youtu.be/xdgnDmeqkMk" };
+export const film = {
+  youtubeId: "xdgnDmeqkMk", title: "What is GlobalHUB?", href: "https://youtu.be/xdgnDmeqkMk",
+  // First line of GlobalHUB's own company profile (globalhub.co.uk/company/globalhub).
+  text: "GlobalHUB.co.uk is a dynamic business media platform transforming how businesses and consumers connect, collaborate, and trade.",
+  cta: "Watch the video",
+};
 
 /** The three cards under the live hero. The live cards are not links; each here points at the matching live index.
     Photos are GlobalHUB's own category images (api.globalhub.co.uk/storage/categories/…): Office, Consulting, Wholesale Trade. */
@@ -35,13 +39,6 @@ export const pillars = [
   { title: "Services", text: "Find your next partnership and browse services provided by GlobalHUB members", href: url("/services"), cta: "Worldwide Services", image: { src: "/images/pillars/services.webp", width: 1400, height: 933 } },
   { title: "Products", text: "Looking for a specific part or product? Find it on GlobalHUB", href: url("/products"), cta: "Products & Parts", image: { src: "/images/pillars/products.webp", width: 1400, height: 933 } },
 ];
-
-export const feed = {
-  title: "Social Feed",
-  prompt: "Want to join the conversation?",
-  body: "Log in to create posts, like, comment, and repost with the community.",
-  cta: { label: "Log in", href: url("/login") },
-};
 
 export const featuredTitle = "Featured businesses";
 

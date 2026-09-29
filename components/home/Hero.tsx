@@ -101,7 +101,8 @@ export default function Hero() {
           <h2 className="hero-title">{slide.title}</h2>
           <p data-hero-appear>{slide.description}</p>
           <div className="hero-ctas" data-hero-appear>
-            <Pill href={slide.primary.href} external>{slide.primary.label}</Pill>
+            {/* The film CTAs play the film on this page instead of leaving for YouTube. */}
+              <Pill href={slide.primary.href.includes("youtu") ? "#film" : slide.primary.href}>{slide.primary.label}</Pill>
             <Pill href={slide.secondary.href} variant="outline">{slide.secondary.label}</Pill>
           </div>
         </div>)}

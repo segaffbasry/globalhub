@@ -27,6 +27,8 @@ export default function Film() {
       <div className="film-copy">
         <Label>Watch the video</Label>
         <h2 id="film-title" data-rise>{film.title}</h2>
+        <p className="film-text" data-words>{film.text}</p>
+        {!playing && <button className="pill pill-solid film-cta" onClick={() => setPlaying(true)} data-appear><span className="film-dot" aria-hidden="true" />{film.cta}</button>}
       </div>
       <div className="film-frame" ref={box} data-image>
         {playing

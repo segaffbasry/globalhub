@@ -5,9 +5,9 @@ import { companyUrl, data, featuredTitle } from "@/lib/home-content";
 
 type Member = (typeof data.members)[number];
 
-function Row({ items, reverse }: { items: Member[]; reverse?: boolean }) {
+function Row({ items }: { items: Member[] }) {
   // The list runs twice so the loop is seamless; the copy is hidden from assistive tech and the tab order.
-  return <div className={`logo-row ${reverse ? "is-reverse" : ""}`}>
+  return <div className="logo-row">
     <ul className="logo-track">
       {[...items, ...items].map((m, i) => {
         const copy = i >= items.length;
@@ -22,12 +22,11 @@ function Row({ items, reverse }: { items: Member[]; reverse?: boolean }) {
   </div>;
 }
 
-/* Featured businesses as a moving wall of member logos, pulled from the live site: the eight featured companies
-   first, then every service provider. Two rows drift in opposite directions and pause on hover, on focus or with
-   the pause button. Reduced motion shows the logos as a still, wrapping grid. */
+/* Featured businesses as one scrolling line of member logos, pulled from the live site: the eight featured companies
+   first, then every service provider. The logos sit straight on the section (no boxes) and the line pauses on hover,
+   on focus or with the pause button. Reduced motion shows them as a still, wrapping group. */
 export default function Featured() {
   const [paused, setPaused] = useState(false);
-  const half = Math.ceil(data.members.length / 2);
   return <section className={`featured ${paused ? "is-paused" : ""}`} data-tone="paper" aria-labelledby="featured-title">
     <div className="wrap featured-head">
       <h2 id="featured-title" className="section-title" data-rise>{featuredTitle}</h2>
@@ -35,9 +34,6 @@ export default function Featured() {
         {paused ? "Play" : "Pause"} logos
       </button>
     </div>
-    <div className="logo-wall" data-appear>
-      <Row items={data.members.slice(0, half)} />
-      <Row items={data.members.slice(half)} reverse />
-    </div>
+    <div data-appear><Row items={data.members} /></div>
   </section>;
 }
