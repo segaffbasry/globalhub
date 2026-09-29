@@ -52,15 +52,17 @@ export const services = {
 
 export const categoriesTitle = "Browse by category";
 
+/** Photos are GlobalHUB's own category images (Knowledge Management, Warehouse Management, Manufacturing,
+    Marketing and Advertising, Design, Research & Development), saved to public/images/why/. */
 export const why = {
   title: "Why GlobalHUB?",
   items: [
-    { title: "All-in-one business support platform", text: "GlobalHUB consolidates a comprehensive array of business support tools and resources into one centralised platform. We offer everything you need to succeed, saving you time and effort searching across multiple platforms." },
-    { title: "Find the businesses you need", text: "Whether you require suppliers, collaborators, or clients, our platform connects you seamlessly. With advanced search filters, uncover new opportunities and forge valuable connections." },
-    { title: "Showcase what you do best", text: "Our platform offers unparalleled possibilities, enabling users to buy and sell parts, products, and services with ease. Whether you're looking to expand your market reach, optimise inventory management, or discover new revenue streams, GlobalHUB provides the tools for exactly this." },
-    { title: "Collaborative Networking Opportunities:", text: "Connect with like-minded entrepreneurs, potential collaborators, and industry peers through GlobalHUB's networking features. Build meaningful relationships, share knowledge, and explore new opportunities for growth and collaboration within our vibrant and supportive community." },
-    { title: "Create your own company page", text: "GlobalHUB empowers you to create your own company page, transforming how you present your brand. Showcase your product and services and connect with clients and partners effortlessly. With intuitive tools, your page becomes a dynamic platform for advertising and brand awareness." },
-    { title: "Opportunity discovery", text: "Explore fresh avenues for growth and collaboration on GlobalHUB's platform. Utilise our intuitive business and product directory and advanced search capabilities to uncover potential opportunities and unlock new possibilities for your business." },
+    { title: "All-in-one business support platform", text: "GlobalHUB consolidates a comprehensive array of business support tools and resources into one centralised platform. We offer everything you need to succeed, saving you time and effort searching across multiple platforms.", image: "/images/why/platform.webp" },
+    { title: "Find the businesses you need", text: "Whether you require suppliers, collaborators, or clients, our platform connects you seamlessly. With advanced search filters, uncover new opportunities and forge valuable connections.", image: "/images/why/find.webp" },
+    { title: "Showcase what you do best", text: "Our platform offers unparalleled possibilities, enabling users to buy and sell parts, products, and services with ease. Whether you're looking to expand your market reach, optimise inventory management, or discover new revenue streams, GlobalHUB provides the tools for exactly this.", image: "/images/why/showcase.webp" },
+    { title: "Collaborative Networking Opportunities:", text: "Connect with like-minded entrepreneurs, potential collaborators, and industry peers through GlobalHUB's networking features. Build meaningful relationships, share knowledge, and explore new opportunities for growth and collaboration within our vibrant and supportive community.", image: "/images/why/network.webp" },
+    { title: "Create your own company page", text: "GlobalHUB empowers you to create your own company page, transforming how you present your brand. Showcase your product and services and connect with clients and partners effortlessly. With intuitive tools, your page becomes a dynamic platform for advertising and brand awareness.", image: "/images/why/company-page.webp" },
+    { title: "Opportunity discovery", text: "Explore fresh avenues for growth and collaboration on GlobalHUB's platform. Utilise our intuitive business and product directory and advanced search capabilities to uncover potential opportunities and unlock new possibilities for your business.", image: "/images/why/discovery.webp" },
   ],
 };
 

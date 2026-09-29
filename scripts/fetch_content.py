@@ -103,7 +103,10 @@ def main():
         }
 
     # "Popular Services" = highest popularity_count; "Recently added" = newest. Both show six, like the live page.
-    popular = [service(s) for s in sorted(services, key=lambda s: -s["popularity_count"])[:6]]
+    # Client feedback (30 Sep): utc.travel's "Ultimate Employee Benefit" (service 179) is a real, popular listing, but its
+    # image is a text-heavy flyer that reads like a guide rather than a service, so the next most popular takes its place.
+    skip = {179}
+    popular = [service(s) for s in sorted(services, key=lambda s: -s["popularity_count"]) if s["id"] not in skip][:6]
     recent = [service(s) for s in sorted(services, key=lambda s: s["created_at"], reverse=True)[:6]]
 
     cats = [{

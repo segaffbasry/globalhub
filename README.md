@@ -32,7 +32,7 @@ A later pass folds in crazyui.com's look (measured from its computed styles) on 
 | 1 | Preloader | Official logo, traced to vectors | base |
 | 2 | Hero | The 4 hero slides (title, text, both CTAs, photo) | light |
 | 3 | Pillars | Collaborate, Services, Products as photo tiles | paper |
-| 4 | Why GlobalHUB? | The 6 reasons | light |
+| 4 | Why GlobalHUB? | The 6 reasons as photo cards, pinned and scrolled sideways | light |
 | 5 | Services | Popular Services (6) and Recently added (6), two rows drifting with the scroll | paper |
 | 6 | Film | "What is GlobalHUB?", the YouTube film every slide links to | light |
 | 7 | Featured businesses | One scrolling line of 31 member logos: the 8 featured companies, then every service provider | paper |
@@ -66,6 +66,17 @@ The order follows the live page. The film, which the live page only links to, ge
 - **Links don't leave the page**: a capture-phase click guard in `components/motion.tsx` stops every link that isn't an in-page `#` anchor, including middle-clicks.
   - The links keep their real live-site URLs, so `scripts/check_links.py` still verifies them.
   - The hero's "Watch the video" and "What is GlobalHUB?" buttons scroll to the film on this page instead of opening YouTube.
+
+### Client feedback, 30 Sep
+
+- **Why GlobalHUB?**: the stacked list felt long and had no images. It is now a sideways story.
+  - On desktop the section pins while six photo cards slide past horizontally, scrubbed to the scroll. A green progress line sits beside the title.
+  - Phones and reduced motion get a swipeable row.
+  - The copy is unchanged.
+  - The photos are GlobalHUB's own category images (Knowledge Management, Warehouse Management, Manufacturing, Marketing and Advertising, Design, Research & Development) in `public/images/why/`.
+- **Services**: the client asked whether utc.travel's "The Ultimate Employee Benefit" was really a service.
+  - It is: `/service/179`, the 5th most popular listing.
+  - Its image is a text-heavy flyer that reads like a guide, so `scripts/fetch_content.py` skips it, and the next most popular service (Matsuura Machinery's 3D Printers) takes its place.
 
 ## Content
 

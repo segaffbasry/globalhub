@@ -1,5 +1,5 @@
 {
- "fetched": "2026-09-28",
+ "fetched": "2026-09-29",
  "hero": [
   {
    "title": "Capacity issues?",
@@ -91,43 +91,24 @@
    }
   },
   {
-   "name": "Paragon Rapid Technologies",
-   "slug": "paragon-rapid-technologies",
+   "name": "New Level Results Ltd",
+   "slug": "new-level-results-ltd",
    "logo": {
-    "src": "/images/logos/YzToEAhbNL4XUEl5ARBhWZJXVWqNhaKzuYLe6gun.webp",
+    "src": "/images/logos/e8mjuFc7s52EBTDGQvagAbiIJcLPhiIOZcWqetdW.webp",
     "width": 240,
     "height": 240
    },
-   "based": "Darlington",
+   "based": "York",
    "country": "United Kingdom",
    "industries": [
-    "3D printing",
-    "Additive Manufacturing Services",
-    "Prototyping Services"
+    "Business Coaching",
+    "Executive Coaching",
+    "Executive Coaching and Leadership Development"
    ],
    "cover": {
-    "src": "/images/companies/MyHROT70ZnoltD0BPMlD0MKOWdxxwbBw1tYVMzze.webp",
+    "src": "/images/companies/mAsGFl2IdS6MkMgQAkbtUaj8U6apIwI0AmxrC4H0.webp",
     "width": 1200,
-    "height": 612
-   }
-  },
-  {
-   "name": "Strategy Plus",
-   "slug": "strategy-plus",
-   "logo": {
-    "src": "/images/logos/JpqxV0GExmxt6lQrle74f5MMOemCY9ktspfRjPYN.webp",
-    "width": 240,
-    "height": 240
-   },
-   "based": "Birmingham",
-   "country": "United Kingdom",
-   "industries": [
-    "Digital Marketing"
-   ],
-   "cover": {
-    "src": "/images/companies/mgRxrRkpzXoxOeoq3Swq3Nja75q7iKCpheucK6o9.webp",
-    "width": 1200,
-    "height": 403
+    "height": 900
    }
   },
   {
@@ -152,24 +133,24 @@
    }
   },
   {
-   "name": "New Level Results Ltd",
-   "slug": "new-level-results-ltd",
+   "name": "Paragon Rapid Technologies",
+   "slug": "paragon-rapid-technologies",
    "logo": {
-    "src": "/images/logos/e8mjuFc7s52EBTDGQvagAbiIJcLPhiIOZcWqetdW.webp",
+    "src": "/images/logos/YzToEAhbNL4XUEl5ARBhWZJXVWqNhaKzuYLe6gun.webp",
     "width": 240,
     "height": 240
    },
-   "based": "York",
+   "based": "Darlington",
    "country": "United Kingdom",
    "industries": [
-    "Business Coaching",
-    "Executive Coaching",
-    "Executive Coaching and Leadership Development"
+    "3D printing",
+    "Additive Manufacturing Services",
+    "Prototyping Services"
    ],
    "cover": {
-    "src": "/images/companies/mAsGFl2IdS6MkMgQAkbtUaj8U6apIwI0AmxrC4H0.webp",
+    "src": "/images/companies/MyHROT70ZnoltD0BPMlD0MKOWdxxwbBw1tYVMzze.webp",
     "width": 1200,
-    "height": 900
+    "height": 612
    }
   },
   {
@@ -199,9 +180,12 @@
     "width": 240,
     "height": 240
    },
-   "based": null,
-   "country": null,
-   "industries": [],
+   "based": "Halifax",
+   "country": "United Kingdom",
+   "industries": [
+    "Health and Nutrition Coaching",
+    "Health Foods and Supplements"
+   ],
    "cover": {
     "src": "/images/companies/Al3Y5IXCtc4mclZMd4OmZCDQriDcclCfDUevaWR8.webp",
     "width": 851,
@@ -227,6 +211,25 @@
     "width": 1200,
     "height": 900
    }
+  },
+  {
+   "name": "Strategy Plus",
+   "slug": "strategy-plus",
+   "logo": {
+    "src": "/images/logos/JpqxV0GExmxt6lQrle74f5MMOemCY9ktspfRjPYN.webp",
+    "width": 240,
+    "height": 240
+   },
+   "based": "Birmingham",
+   "country": "United Kingdom",
+   "industries": [
+    "Digital Marketing"
+   ],
+   "cover": {
+    "src": "/images/companies/mgRxrRkpzXoxOeoq3Swq3Nja75q7iKCpheucK6o9.webp",
+    "width": 1200,
+    "height": 403
+   }
   }
  ],
  "members": [
@@ -240,19 +243,10 @@
    }
   },
   {
-   "name": "Paragon Rapid Technologies",
-   "slug": "paragon-rapid-technologies",
+   "name": "New Level Results Ltd",
+   "slug": "new-level-results-ltd",
    "logo": {
-    "src": "/images/logos/YzToEAhbNL4XUEl5ARBhWZJXVWqNhaKzuYLe6gun.webp",
-    "width": 240,
-    "height": 240
-   }
-  },
-  {
-   "name": "Strategy Plus",
-   "slug": "strategy-plus",
-   "logo": {
-    "src": "/images/logos/JpqxV0GExmxt6lQrle74f5MMOemCY9ktspfRjPYN.webp",
+    "src": "/images/logos/e8mjuFc7s52EBTDGQvagAbiIJcLPhiIOZcWqetdW.webp",
     "width": 240,
     "height": 240
    }
@@ -267,10 +261,10 @@
    }
   },
   {
-   "name": "New Level Results Ltd",
-   "slug": "new-level-results-ltd",
+   "name": "Paragon Rapid Technologies",
+   "slug": "paragon-rapid-technologies",
    "logo": {
-    "src": "/images/logos/e8mjuFc7s52EBTDGQvagAbiIJcLPhiIOZcWqetdW.webp",
+    "src": "/images/logos/YzToEAhbNL4XUEl5ARBhWZJXVWqNhaKzuYLe6gun.webp",
     "width": 240,
     "height": 240
    }
@@ -298,6 +292,15 @@
    "slug": "simplytrak",
    "logo": {
     "src": "/images/logos/qFcgq1F4eQU8Rk8ax8k6i0T6Itg8DdUjKZ8y6Pry.webp",
+    "width": 240,
+    "height": 240
+   }
+  },
+  {
+   "name": "Strategy Plus",
+   "slug": "strategy-plus",
+   "logo": {
+    "src": "/images/logos/JpqxV0GExmxt6lQrle74f5MMOemCY9ktspfRjPYN.webp",
     "width": 240,
     "height": 240
    }
@@ -531,25 +534,6 @@
    }
   },
   {
-   "id": 202,
-   "title": "Procurement Consulting / Vendor Management",
-   "description": "Expert Procurement Isn’t Just for the Giants.\r\n\r\nMany business owners assume expert procurement is reserved for large corporations with massive budgets—at Procureable Solutions, we exist to prove the opposite.\r\n\r\nIn reality, smaller businesses often have the most to gain. We believe that professional procurement is even more transformative for new and growing companies, providing the strategic stability needed to scale with confidence.\r\n\r\nWe are committed to delivering bespoke strategies that solve complex supply challenges and create lasting value. By focusing on sustainable, bottom-line growth, we ensure our partnership delivers results that endure.\r\n\r\n​We’re ready to be your competitive advantage.",
-   "image": {
-    "src": "/images/services/5sLlgIX9QiRJ9ur20YlblHJ1y4Fl2TrDRPLv5d0f.webp",
-    "width": 1000,
-    "height": 667
-   },
-   "company": {
-    "name": "Procureable Solutions Ltd",
-    "slug": "procureable-solutions-ltd",
-    "logo": {
-     "src": "/images/logos/PIwMrQBVRlzNHGgkck4aY9ZPNRSRvZP3alcJaS1M.webp",
-     "width": 240,
-     "height": 240
-    }
-   }
-  },
-  {
    "id": 118,
    "title": "Selective Laser Sintering (SLS)",
    "description": "Selective Laser Sintering (SLS) is a trusted and highly versatile 3D printing technology, ideal for producing strong, functional prototypes and end-use parts with complex geometries. By using a laser to fuse powdered nylon materials layer by layer, SLS creates parts with excellent mechanical strength, heat and chemical resistance, and consistent performance under load.\r\n\r\nAt Paragon Rapid Technologies, we use SLS to produce parts that are both tough and accurate—perfect for mechanical assemblies, housings, brackets, ducting, and more. With no need for support structures, SLS allows for intricate designs, nested builds, and faster iterations, making it ideal for product development and low-volume production across sectors such as automotive, aerospace, industrial, and medical.",
@@ -563,6 +547,25 @@
     "slug": "paragon-rapid-technologies",
     "logo": {
      "src": "/images/logos/YzToEAhbNL4XUEl5ARBhWZJXVWqNhaKzuYLe6gun.webp",
+     "width": 240,
+     "height": 240
+    }
+   }
+  },
+  {
+   "id": 202,
+   "title": "Procurement Consulting / Vendor Management",
+   "description": "Expert Procurement Isn’t Just for the Giants.\r\n\r\nMany business owners assume expert procurement is reserved for large corporations with massive budgets—at Procureable Solutions, we exist to prove the opposite.\r\n\r\nIn reality, smaller businesses often have the most to gain. We believe that professional procurement is even more transformative for new and growing companies, providing the strategic stability needed to scale with confidence.\r\n\r\nWe are committed to delivering bespoke strategies that solve complex supply challenges and create lasting value. By focusing on sustainable, bottom-line growth, we ensure our partnership delivers results that endure.\r\n\r\n​We’re ready to be your competitive advantage.",
+   "image": {
+    "src": "/images/services/5sLlgIX9QiRJ9ur20YlblHJ1y4Fl2TrDRPLv5d0f.webp",
+    "width": 1000,
+    "height": 667
+   },
+   "company": {
+    "name": "Procureable Solutions Ltd",
+    "slug": "procureable-solutions-ltd",
+    "logo": {
+     "src": "/images/logos/PIwMrQBVRlzNHGgkck4aY9ZPNRSRvZP3alcJaS1M.webp",
      "width": 240,
      "height": 240
     }
@@ -588,25 +591,6 @@
    }
   },
   {
-   "id": 179,
-   "title": "The Ultimate Employee Benefit by utc.travel",
-   "description": "By making holidays, family visits, short breaks and everyday travel more affordable, utc.travel delivers something traditional perks can’t: real money back in employees’ pockets. It’s a benefit people understand, value and use - driving stronger engagement, loyalty and appreciation for their employer. utc.travel transforms this spend into a powerful financial wellbeing benefit, giving employees access to genuine trade rates that stretch their income further without asking employers to spend more.",
-   "image": {
-    "src": "/images/services/zUNWqJrqxisiL7sEJ8D3DlDHZhG7EyGMVM2yPPlJ.webp",
-    "width": 1000,
-    "height": 1403
-   },
-   "company": {
-    "name": "utc.travel Ltd",
-    "slug": "utctravel-ltd",
-    "logo": {
-     "src": "/images/logos/G9j05uBlOhYfJ2RqFw7sq9mxBmEC9qk6CburJtml.webp",
-     "width": 240,
-     "height": 240
-    }
-   }
-  },
-  {
    "id": 117,
    "title": "Lamination",
    "description": "Lamination is a key process in the creation of custom orthotic devices, enabling practitioners to combine multiple materials for enhanced performance, durability, and patient comfort. We offer a wide range of lamination materials tailored to meet diverse clinical needs. \r\n\r\nThese include EVA foams in various densities for cushioning and support, Poron® for shock absorption, Plastazote® for lightweight and hypoallergenic properties, and carbon fibre sheets for rigidity and strength. Our selection also features thermoplastics and polypropylene for structural layers, as well as top covers in antimicrobial, moisture-wicking, or soft-touch finishes. Whether you're building functional foot orthoses or bespoke insoles, Algeos provides the materials and expertise to help you laminate with precision and confidence.",
@@ -622,6 +606,25 @@
      "src": "/images/logos/lIEpKapwf00IG58Jh7CsvyoEMOGNJmwCi5tQCIsG.webp",
      "width": 240,
      "height": 180
+    }
+   }
+  },
+  {
+   "id": 115,
+   "title": "3D Printers",
+   "description": "Matsuura Machinery Ltd manufactures and supplies 3D printing machinery.",
+   "image": {
+    "src": "/images/services/5j3NStoFFWubRgGSfLdCERs0sUQQNlplhGZkIocC.webp",
+    "width": 585,
+    "height": 540
+   },
+   "company": {
+    "name": "Matsuura Machinery Ltd",
+    "slug": "matsuura-machinery-ltd",
+    "logo": {
+     "src": "/images/logos/I3Gc81MwO6YrRibBragypBZRRnRzLSQNDBR55Esk.webp",
+     "width": 300,
+     "height": 200
     }
    }
   }
